@@ -13,8 +13,8 @@ setup(name="rand_param_envs",
         'requests>=2.0',
         'six',
         'pyglet>=1.2.0',
-        'scipy==0.17.1',
-        'PyOpenGL==3.1.0',
+        'scipy>=0.17.1',
+        'PyOpenGL>=3.1.0',
         'nose>=1.3.7'
       ],
       zip_safe=False)

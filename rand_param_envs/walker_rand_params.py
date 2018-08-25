@@ -1,7 +1,6 @@
 import numpy as np
 from rand_param_envs.base import RandomEnv
 from rand_param_envs.gym import utils
-from maml_zoo.logger import logger
 
 class Walker2DRandParamsEnv(RandomEnv, utils.EzPickle):
     def __init__(self, log_scale_limit=3.0):
@@ -38,17 +37,6 @@ class Walker2DRandParamsEnv(RandomEnv, utils.EzPickle):
         self.viewer.cam.distance = self.model.stat.extent * 0.5
         self.viewer.cam.lookat[2] += .8
         self.viewer.cam.elevation = -20
-
-    def log_diagnostics(self, paths, prefix=''):
-        progs = [
-            path["observations"][-1][-3] - path["observations"][0][-3]
-            for path in paths
-        ]
-        logger.logkv(prefix + 'AverageForwardProgress', np.mean(progs))
-        logger.logkv(prefix + 'MaxForwardProgress', np.max(progs))
-        logger.logkv(prefix + 'MinForwardProgress', np.min(progs))
-        logger.logkv(prefix + 'StdForwardProgress', np.std(progs))
-
 
 if __name__ == "__main__":
 

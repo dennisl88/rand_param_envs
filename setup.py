@@ -1,4 +1,4 @@
-from setuptools import setup
+from setuptools import setup, find_packages
 
 setup(name="rand_param_envs",
       version='0.1',
@@ -7,9 +7,8 @@ setup(name="rand_param_envs",
       author='Dennis Lee, Ignasi Clavera, Jonas Rothfuss',
       author_email='dennisl88@berkeley.edu',
       license='MIT',
-      packages=['rand_param_envs',
-                'rand_param_envs.gym',
-                'rand_param_envs.mujoco_py'],
+      packages=[package for package in find_packages()
+                if package.startswith('rand_param_envs')],
       install_requires=[
         'numpy>=1.10.4',
         'requests>=2.0',

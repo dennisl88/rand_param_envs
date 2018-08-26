@@ -1,3 +1,4 @@
+from rand_param_envs.base import MetaEnv
 from rand_param_envs.gym.envs.registration import register
 
 register(

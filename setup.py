@@ -18,4 +18,14 @@ setup(name="rand_param_envs",
         'PyOpenGL>=3.1.0',
         'nose>=1.3.7'
       ],
+      package_data={'rand_param_envs.gym': [
+        'envs/mujoco/assets/*.xml',
+        'envs/classic_control/assets/*.png',
+        'envs/robotics/assets/LICENSE.md',
+        'envs/robotics/assets/fetch/*.xml',
+        'envs/robotics/assets/hand/*.xml',
+        'envs/robotics/assets/stls/fetch/*.stl',
+        'envs/robotics/assets/stls/hand/*.stl',
+        'envs/robotics/assets/textures/*.png']
+      },
       zip_safe=False)

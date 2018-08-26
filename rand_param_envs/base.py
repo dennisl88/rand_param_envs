@@ -59,7 +59,7 @@ class RandomEnv(MetaEnv, MujocoEnv):
     RAND_PARAMS_EXTENDED = RAND_PARAMS + ['geom_size']
 
     def __init__(self, log_scale_limit, *args, rand_params=RAND_PARAMS, **kwargs):
-        super(RandomEnv, self).__init__(*args, **kwargs)
+        MujocoEnv.__init__(self, 'hopper.xml', 4)
         assert set(rand_params) <= set(self.RAND_PARAMS_EXTENDED), \
             "rand_params must be a subset of " + str(self.RAND_PARAMS_EXTENDED)
         self.log_scale_limit = log_scale_limit            

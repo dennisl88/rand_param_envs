@@ -9,7 +9,7 @@ class PR2Env(RandomEnv, utils.EzPickle):
 
     def __init__(self, log_scale_limit=1.):
         self.viewer = None
-        RandomEnv.__init__(self, log_scale_limit, self.FILE, 4)
+        RandomEnv.__init__(self, log_scale_limit, 'pr2.xml', 4)
         utils.EzPickle.__init__(self)
 
     def _get_obs(self):

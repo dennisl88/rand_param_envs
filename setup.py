@@ -20,6 +20,7 @@ setup(name="rand_param_envs",
       ],
       package_data={'rand_param_envs.gym': [
         'envs/mujoco/assets/*.xml',
+        'envs/mujoco/assets/meshes/*',
         'envs/classic_control/assets/*.png',
         'envs/robotics/assets/LICENSE.md',
         'envs/robotics/assets/fetch/*.xml',
